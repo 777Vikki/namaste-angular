@@ -1,0 +1,21 @@
+<h2 *ngIf="id">Update Employee Detail</h2>
+<h2 *ngIf="!id">Add Employee</h2>
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+    <label>
+        Name: 
+        <input type="text" formControlName="name" />
+    </label>
+    <br />
+    <label>
+        Email:
+        <input type="text" formControlName="email" />
+    </label>
+    <br />
+    <label>
+        Role:
+        <input type="text" formControlName="role" />
+    </label>
+    <br />
+
+    <button type="submit" [disabled]="empForm.invalid">{{id? 'Update' : 'Add'}} Employee</button>
+</form>
